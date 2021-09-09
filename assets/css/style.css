@@ -1,0 +1,478 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ol, ul, li {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* 
+1. Làm việc từ ngoài vào trong(main -> header)
+2. Làm việc từ trên xuống dưới(header-> slider -> container ->...)
+3. Tổng quan đến chi tiết.
+ */
+
+
+/* 
+1/ Vị trí
+2. Kích thước
+3. Màu sắc
+4. Kiểu dáng(kiểu chữ,hình dáng,..) 
+*/
+
+/* #wrapper {
+
+} */
+
+/* common */
+
+.clear{
+    clear: both;
+}
+/* Với những thuộc tính chung để ko bị đè lên thì nên có !important */
+.text-white {
+    color: white !important;
+}
+.text-center {
+    text-align: center !important;
+}
+.mt-8 {
+    margin-top: 8px !important;
+}
+.mt-16 {
+    margin-top: 16px !important;
+}
+.row {
+    margin-left: -8px;
+    margin-right: -8px;
+}
+.row::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.col {
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+.col-full {
+    width: 100%;
+}
+.col-half {
+    width: 50%;
+}
+.col-third {
+    width: 33.33333%;
+}
+
+
+
+
+
+
+#header {
+    height: 46px;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+#nav {
+    display: inline-block;
+}
+#nav, .subnav{
+    list-style-type: none;
+}
+#nav > li{
+    display: inline-block;
+
+}
+#nav li {
+
+    position: relative;
+}
+#nav > li > a {
+    color: white;
+    text-transform: uppercase;
+}
+#nav li a{
+
+    text-decoration: none;
+    line-height: 46px;
+    padding: 0 24px;
+    display: inline-block;
+}
+
+#nav > li:hover > a,
+#nav .subnav li:hover {
+    color: black;
+    background-color: grey;
+}
+#nav .nav-arrow-down{
+    font-size: 15px;
+}
+#nav .subnav{
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+#nav li:hover .subnav{
+    display: block;
+}
+#nav .subnav a{
+    color: black;
+    display: inline-block;
+    padding: 0 16px;
+    line-height: 38px;
+}
+#header .search-button {
+    float: right;
+}
+#header .search-icon {
+    font-size: 20px;
+    color: white;
+    line-height: 46px;
+    padding: 0 20px;
+    cursor: pointer;
+}
+#header .search-button:hover {
+    background-color: #f44336!important;
+}
+
+
+/* #slider .text-content { Đây là 1 cách dùng để cân đối ảnh )
+    left: 50%;
+    transform: translateX(-50%);
+} */
+
+
+
+
+/* Phần 2 : SLIDER */
+
+#slider {
+    margin-top: 46px;
+    padding-top: 50%;
+    background: url(/assets/img/Slider1.jpg) top center / cover no-repeat;
+    position: relative;
+}
+#slider .text-content {
+    position: absolute;
+    bottom: 47px;
+    color: white;
+    width: 100%;
+    text-align: center;
+    font-family: "Segoe UI",Arial,sans-serif;
+}
+#slider .text-heading{
+    font-weight: 400;
+    margin: 10px 0;
+    font-size: 22px;
+}
+#sldert .text-subscene {
+    font-size: 15px;
+}
+
+/* Phần 3 : Container - Content */
+
+
+#container {
+
+}
+
+#content .section-content {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 64px 0;
+}
+#content .section-heading {
+    font-size: 30px;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 4px;
+}
+#content .section-slogan {
+    font-size: 15px;
+    margin-top: 25px;
+    text-align: center;
+    font-style: italic;
+    opacity: 0.6;
+}
+#content .about-text {
+    margin-top: 25px;
+    font-size: 15px;
+    text-align: justify;
+    line-height: 1.4;
+}
+
+#content .member-list {
+    margin-top: 48px;
+    /* overflow: hidden; */
+}
+
+#content .member-name{
+    font-size: 15px;
+
+}
+#content .member-img{
+    margin-top: 15px;
+    width: 154px;
+    height: 154px;
+    border-radius: 4px;
+}
+
+/* TOUR SECTION */
+
+
+#content .tour-section {
+    background-color: rgba(0, 0, 0, 1);
+    padding: 48px 16px;
+}
+/* .ticket-list {
+    background-color: white;
+    margin-top: 50px;
+    width: 766px;
+    margin-left: auto;
+    margin-right: auto;
+} */
+
+.ticket-list {
+    background-color: white;
+    margin-top: 50px;
+    list-style-type: none;
+}
+.ticket-list li {
+    font-size: 15px;
+    border-bottom: 1px solid #ddd;
+    padding: 9px 8px;
+    color: #757575;
+}
+.ticket-list .sold-out {
+    font-size: 16px;
+    margin-left: 16px;
+    padding: 3px 8px;
+    background-color: #f44336!important;
+    color: white;
+    line-height: 20px;
+    display: inline-block;
+    /* border-radius: 4px; */
+}
+.ticket-list .quantity {
+    float: right;
+    background-color: black;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 24px;
+    font-weight: 700;
+}
+
+/* CLASS ticket-city */
+
+.ticket-city{
+    margin-top: 32px;
+    margin-bottom: 0;
+}
+.ticket-city .city-img {
+    width: 100%;
+    height: 184px;
+    display: block;
+}
+.ticket-city .city-img:hover {
+    opacity: 0.6;
+}
+.ticket-city .city-content{
+    padding: 16px;
+    font-size: 15px;
+    background-color: white;
+    color: black ;
+}
+.ticket-city .city-heading {
+    font-weight: 700;
+
+}
+.ticket-city .city-time {
+    margin: 15px 0;
+    opacity: 0.6;
+}
+.ticket-city .city-about {
+    margin: 15px 0;
+    line-height: 1.4;
+} 
+.city-buy {
+    color: #fff;
+    background-color: #000;
+    margin: 0 0 16px;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+.city-buy:hover {
+    color: black;
+    background-color: #cccccc;
+    cursor: pointer;
+}
+
+/* Phần 4 : CONTACT */
+.contact-content {
+    margin-top: 48px;
+}
+.contact-info {
+    font-size: 18px;
+    line-height: 1.4;
+}
+.icon-contact {
+    width: 30px;
+    display: inline-block;
+}
+.contact-form {
+    font-size: 15px;
+}
+.contact-text {
+    padding: 10px;
+    width: 100%;
+}
+.contact-send {
+    background-color: black;
+    color: white;
+    padding: 9px 16px;
+    float: right;
+}
+
+/* Map section */
+
+.map-content {
+    width: 100%;
+}
+
+/* Phần Đặc biệt : Modal  */
+.modal.open{
+    display: flex;
+}
+.modal{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+.modal-container {
+    background-color: #fff;
+    width: 900px;
+    min-height: 200px;
+    position: relative;
+    animation: ModalFadeIn ease 0.5s;
+}
+.model-heading {
+    color: #fff;
+    font-size: 30px;
+    background-color: #009688;
+    padding: 32px 16px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+.ti-bag {
+    margin-right: 12px;
+}
+.ti-close {
+    position: absolute;
+    color: #fff;
+    right: 0;
+    top: 0;
+    padding: 12px;
+    cursor: pointer;
+    opacity: 0.8;
+}
+.ti-close:hover {
+    opacity: 1;
+    background-color: #f44336;
+}
+.modal-body {
+    padding: 16px;
+}
+.modal-label {
+    display: block;
+    font-size: 15px;
+    margin: 15px 0;
+    color: rgba(0, 0, 0, 1);
+    font-weight: 600;
+}
+.modal-input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+}
+.buy-tickets {
+    color: #fff;
+    background-color: #009688;
+    width: 100%;
+    padding: 16px;
+    margin-top: 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.ticket-check {
+    font-weight: 600;
+}
+.buy-tickets:hover {
+    opacity: 0.7;
+}
+.modal-footer {
+    margin: 20px;
+    text-align: right;
+}
+.modal-footer a {
+    color: #2196f3;
+}
+
+/* Keyframe dùng để tạo hiệu ứng trượt xuống khi mở Buy Button */
+@keyframes ModalFadeIn {
+    from{
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+/* FOOTER */
+
+.footer-social {
+    padding: 64px 16px;
+}
+.social-brand a {
+    text-decoration: none;
+}
+.social-brand  i{
+    color: grey;
+    font-size: 20px;
+}
+.footer-slogan {
+    margin: 15px 0;
+}
